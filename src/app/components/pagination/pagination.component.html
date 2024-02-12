@@ -1,6 +1,5 @@
 <div class="flex flex-row gap-x-3">
-    <button (click)="onPageChange(1)">
-        <<< /button>
+    <button (click)="onPageChange(1)"><<</button>
             <button *ngFor="let page of pages" class="p-1" (click)="onPageChange(page)"
                 [ngClass]="currentPage===page ? 'bg-blue-500 text-white' : 'bg-white text-black'">{{page}}</button>
             <button (click)="onPageChange(totalPages)">>></button>
