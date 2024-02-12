@@ -1,5 +1,20 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<div class="min-h-screen p-5 border border-black m-3 flex flex-col gap-y-3">
+  <app-user-form [onSubmit]="onSubmit" class="mx-auto" [isDisabled]="isLoading.repos || isLoading.user"></app-user-form>
+  <h1 id="user-details-error" *ngIf="isError.user" class="text-3xl text-red-500 font-bold mx-auto">Error Fetching User Details: {{isError.user}}</h1>
+  <app-user-details-skeleton *ngIf="isLoading.user"></app-user-details-skeleton>
+  <app-user-details *ngIf="!isLoading.user && !isError.user && user" [user]="user"></app-user-details>
+  <div *ngIf="repositories" class="flex flex-row place-content-between">
+    <h1 class="text-3xl font-bold">User Repositories</h1>
+    <div class="flex flex-row items-center">
+      <p>Page Size: </p>
+      <!-- <input type="number" [disabled]="isError.repos || isError.user || isLoading.repos || isLoading.user" [value]="pageSize" (input)="updatePageSize($event)" min="0" max="50"> -->
+      <select [disabled]="isError.repos || isError.user || isLoading.repos || isLoading.user" (change)="updatePageSize($event)">
+        <option *ngFor="let page of [10,25,50,75,100]">{{page}}</option>
+      </select>
+    </div>
   </div>
+  <h1 id="user-repos-error" *ngIf="isError.repos" class="text-3xl text-red-500 font-bold mx-auto">Error Fetching User Repositories: {{isError.repos}}</h1>
+  <app-user-repositories-skeleton [count]="pageSize" *ngIf="isLoading.repos"></app-user-repositories-skeleton>
+  <app-user-repositories *ngIf="!isLoading.repos && !isError.repos && repositories" [repositories]="repositories"></app-user-repositories>
+  <app-pagination *ngIf="totalPages>0" class="mx-auto my-3" [currentPage] = "currentPage" [totalPages]="totalPages" [setPage]="setPage"></app-pagination>
 </div>

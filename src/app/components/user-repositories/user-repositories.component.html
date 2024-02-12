@@ -1,0 +1,13 @@
+<div id="user-repos" *ngIf="repositories && repositories.length>0" class="font-bold grid grid-cols-2 gap-y-8 gap-x-16">
+    <div *ngFor="let repo of repositories"
+      class="text-xs items-start justify-center flex flex-col border border-black p-5 gap-5">
+      <h1 class="text-xl text-blue-500">{{repo.name | titlecase}}</h1>
+      <p *ngIf="repo.description">{{repo.description}}</p>
+      <p *ngIf="repo.language && repo.topics.length===0" class="bg-blue-500 text-white p-1">{{repo.language}}</p>
+      <div *ngIf="repo.topics.length>0" class="flex flex-row gap-x-3">
+        <div *ngFor="let topic of repo.topics" class="text-xs">
+          <p class="bg-blue-500 text-white p-1">{{topic}}</p>
+        </div>
+      </div>
+    </div>
+</div>

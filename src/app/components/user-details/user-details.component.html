@@ -1,0 +1,11 @@
+<div id="user-details" *ngIf="user" class="flex flex-row items-center">
+    <img class="w-52 h-52 rounded-full" src={{user.avatar_url}} alt="user_avatar">
+    <div class="pl-3 flex flex-col space-y-3">
+      <h1 class="text-3xl font-bold">{{(user.name || user.login) | titlecase}}</h1>
+      <h4 *ngIf="user.bio && user.bio.length>0">{{user.bio}}</h4>
+      <h4 *ngIf="user.location && user.location.length>0">{{user.location}}</h4>
+      <a *ngIf="user.twitter_username && user.twitter_username.length>0" target="_blank"
+        href="https://twitter.com/{{user.twitter_username}}">Twitter: https://twitter.com/{{user.twitter_username}} </a>
+      <a href={{user.html_url}} target="_blank">{{user.html_url}}</a>
+    </div>
+  </div>
