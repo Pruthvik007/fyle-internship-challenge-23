@@ -1,43 +1,25 @@
-# Fyle Frontend Challenge
+# Fyle Internship Challenge
 
-## Who is this for?
+This repository contains an Angular App developed as part of the Fyle Internship Challenge. The app is hosted at [https://Pruthvik007.github.io/fyle-internship-challenge-23/](https://pruthvik007.github.io/fyle-internship-challenge-23/).
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. The candidate should be able to commit to at least 6 months of dedicated time for internship.
+## Description
 
-## Why work at Fyle?
-
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
-
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
-
-## Challenge outline
-
-This challenge involves implementing application using github api. 
-
-The services that you need to use are already implemented - check out ApiService.
-
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
-
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
-
-## What happens next?
-
-You will hear back within 48 hours from us via email.
+The Fyle Internship Challenge is a web application that allows users to view the public Repositories list of any GitHub user.
 
 ## Installation
 
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
+To run this app locally, follow these steps:
 
-### Install requirements
-* Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
+1. Clone the repository: `git clone https://github.com/Pruthvik007/fyle-internship-challenge-23.git`
+2. Navigate to the project directory: `cd fyle-internship-challenge-23`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit `http://localhost:4200`
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Further help
-
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+1. Open the app in your browser.
+2. Enter the GitHub username in the provided input field.
+3. Choose the desired page size if required (number of repositories per page).
+4. Click the submit button to view the repositories.
+5. Please note that the app includes basic validations to ensure the username is not empty and contains at least 3 characters before initiating the search.
